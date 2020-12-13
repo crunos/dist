@@ -5,8 +5,8 @@ kernel:
 
 init:
   - alpine:latest
-  - pwfoo/rootfs:latest
-  - pwfoo/crun:latest
+  - crunos/init:latest
+  - crunos/crun:latest
         
 services:
   - name: rngd
