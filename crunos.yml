@@ -1,22 +1,10 @@
 kernel:
   image: crunos/kernel:latest
 #  cmdline: "console=tty console=tty0 console=ttyS0 console=ttyAMA0,115200 random.trust_cpu=on"
-  cmdline: "console=ttyAMA0,115200 console=tty console=ttyS0 highres=off random.trust_cpu=on"  # vm
+  cmdline: "console=ttyAMA0,115200 console=tty console=ttyS0 highres=off" # random.trust_cpu=on"  # vm
 
 init:
   - alpine:latest
-  - crunos/init:latest
-  - crunos/crun:latest
-        
-services:
-  - name: rngd
-    image: crunos/rngd:latest
-
-  - name: mdevd
-    image: crunos/mdevd:latest
-
-  - name: udhcpc
-    image: crunos/udhcpc:latest
-
-#  - name: sshd
-#    image: crunos/sshd:latest
+  - crunosfs/init:latest
+  - crunosfs/newrootfs:latest
+  - crunosfs/containers:latest
