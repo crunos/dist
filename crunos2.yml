@@ -1,0 +1,10 @@
+kernel:
+  image: crunos/kernel:latest
+#  cmdline: "console=tty console=tty0 console=ttyS0 console=ttyAMA0,115200 random.trust_cpu=on"
+  cmdline: "console=ttyAMA0,115200 console=tty console=ttyS0 highres=off" # random.trust_cpu=on"  # vm
+
+init:
+#  - alpine:latest
+  - crunosfs/init:latest
+#  - crunosfs/newrootfs:latest
+  - crunosfs/containers:latest
